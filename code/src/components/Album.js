@@ -2,17 +2,25 @@ import React from 'react'
 
 
 export const Album = (props) => {
-    console.log(props.props.albums.items)
+    console.log(props)
     return (
-        props.props.albums.items.map((a) => {
+        props.props.albums.items.map((data) => {
             return(   
                 <div className='album-container'> 
-                    <img src={a.images[0].url} alt='cover' />
-                    <p>{a.name}</p>
+                    
+                    
+                    <a href = {data.external_urls.spotify} target = "_blank">
+                    <img src={data.images[0].url} alt='cover' />
+                    <p>{data.name}</p>
+                    </a>
+
+                    <a href = {data.artists.external_urls} target = "_blank">
+                    <p>{data.artists[.name}</p>
+                    
+                    </a>
+                   
+                </div>  
                 
-                
-                </div>   
-            
             )
                    
             
