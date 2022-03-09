@@ -1,15 +1,20 @@
 import React from 'react'
 import data from './data.json'
 import {Album} from './components/Album'
+import {Header} from './components/Header'
 
 
-console.log(data.albums.items)
+//console.log(data.albums.items)
 
-// react component is a function
 export const App = () => {
   const musicList = data.albums.items
   return (
+    
     <section>
+      <header>
+        <Header />
+      </header>
+
       {musicList.map((album) => {
         return (
           <>
@@ -23,6 +28,6 @@ export const App = () => {
           </>
           
       )})}
-      </section>
+    </section>
   )
-        }
+}

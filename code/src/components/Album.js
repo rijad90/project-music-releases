@@ -1,4 +1,5 @@
 import React from 'react' 
+import { Icons } from '../components/Icons' 
 
 
 export const Album = (props) => {
@@ -8,6 +9,7 @@ export const Album = (props) => {
             <div className='image-container'>
                 <a href={props.albumlink}>
                     <img src= {props.albumimage} alt="album cover" />
+                    <Icons />
                 </a>
             </div>
             
