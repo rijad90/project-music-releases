@@ -5,9 +5,162 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+h1 {
+  color: #FFF;
+  font-size: 20px;
+  margin: 10px 20px;
+  padding: 5px;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+a {
+  text-decoration: none;
+  color:#a0a0a0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.albumTitle {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFF;
+  font-family: Helvetica;
+}
+
+.artistContainer {
+  font-size: 14px;
+  font-family: Helvetica;
+}
+
+/* If there is more than 2 artists */
+.artistContainer a:not(:first-child, :last-child)::before {
+  content: " , ";
+}
+
+/* If it's 2 artists */
+.artistContainer a:last-child::before {
+  content: " & ";
+}
+
+/* If it's only 1 artist */
+.artistContainer a:only-child::before { 
+  content: "";
+}
+
+.mainContainer { 
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.albumContainer {
+  position: relative;
+  place-self: center;
+  width: 90%;
+  margin: 20px;
+  height: auto;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.albumImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5 ease;
+}
+
+.iconsContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.icons {
+  width: 40px;
+  filter: brightness(0) invert(1);
+}
+
+
+.play-icon {
+  width: 80px;
+  opacity: 0.5;
+}
+
+.play-icon:hover { 
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* To make the image darker when hover */
+.imageContainer:hover .albumImage{
+  opacity: 0.4;
+}
+
+/* To make the icons show when hover */
+.imageContainer:hover .iconsContainer {
+  opacity: 1;
+}
+
+
+@media screen and (min-width: 720px) {
+  .mainContainer { 
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .mainContainer { 
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* 
+@media screen and (min-width:1020px) {
+  .mainContainer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+
+@media screen and (min-width:900px) {
+  .mainContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+} 
+
+
+@media screen and (min-width:720) {
+  .mainContainer {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+  }
+} 
+
+*/
+

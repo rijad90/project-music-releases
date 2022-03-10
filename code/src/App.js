@@ -1,20 +1,22 @@
+// Imports the data from the json 
 import React from 'react'
 import data from './data.json'
+
+// Imports the components
 import {Album} from './components/Album'
 import {Header} from './components/Header'
 
-
-//console.log(data.albums.items)
-
+// creates a variable to map the data 
 export const App = () => {
   const musicList = data.albums.items
   return (
-    
-    <section>
+    <>
       <header>
         <Header />
       </header>
 
+
+  <section className='mainContainer'>
       {musicList.map((album) => {
         return (
           <>
@@ -26,8 +28,8 @@ export const App = () => {
             albumArtist={album.artists}
           />
           </>
-          
       )})}
     </section>
+    </>
   )
 }
